@@ -1,14 +1,20 @@
-<?php
-$couch_dsn = "http://localhost:5984/";
-$couch_db = "songs";
-require_once "./lib/couch.php";
-require_once "./lib/couchClient.php";
-require_once "./lib/couchDocument.php";
-$client = new couchClient($couch_dsn,$couch_db);
-$resp = $couch->send("GET", "/_all_dbs"); 
- var_dump($resp); // string(17) "["test_suite_db"]" 
- $misDatosJSON = json_decode($_POST["miJSON"]);
-   
-   //con esto podría mostrar todos los datos del JSON recibido
-  print_r($misDatosJSON);
-?>
+</html>
+<html> 
+<head> 
+  	<title>Restringir por edad</title> 
+</head> 
+
+<body> 
+
+<? 
+$edad = $_POST["edad"]; 
+echo "Tu edad: $edad<p>"; 
+
+if ($edad < 18) { 
+  	echo "No puedes entrar"; 
+}else{ 
+  	echo "Bienvenido"; 
+} 
+?> 
+</body> 
+</html>
